@@ -1,6 +1,3 @@
-# Ansible
-
-
 Web-server ansible_host=172.31.91.26
 target2 ansible_host=172.31.94.231
 DB ansible_host=172.31.6.214
@@ -17,6 +14,7 @@ webserver
 db
 
 
- ansible -i inventory -m ping '*'
 
-ansible -i inventory -m ping Web-server
+[dc:vars]
+ansible_user=centos
+ansible_ssh_private_key_file=key.pem
